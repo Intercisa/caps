@@ -40,9 +40,15 @@ impl CapitalizedSentence {
     }
 }
 
-pub fn capitalize(sentence: &Option<Vec<String>>) {
+pub fn capitalize(sentence: &Option<Vec<String>>, reverse: bool) {
     match cap(sentence) {
-        Ok(s) => println!("{}", s.sentence),
+        Ok(s) => {
+            let sentence  = s.sentence;
+            match reverse {
+                true => println!("{}", sentence.chars().rev().collect::<String>()),
+                false => println!("{}", sentence)
+            }
+        },
         Err(err) => panic!("{:?}",err)
     }
 }
