@@ -22,9 +22,7 @@ impl CapitalizedSentence {
             .map(|w| {
                 match IGNORED_WORDS.contains(&w.as_str()) {
                     true => w.to_string(),
-                    false => {
-                        w[0..1].to_uppercase() + &w[1..]
-                    }
+                    false => w[0..1].to_uppercase() + &w[1..]
                 }
             }).collect();
 
