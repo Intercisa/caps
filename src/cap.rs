@@ -67,7 +67,7 @@ mod tests {
         vec.push("a".to_string());
         vec.push("city".to_string());
         assert_eq!(
-            capitalize(&Some(vec)),
+            cap(&Some(vec)),
             Ok(CapitalizedSentence { sentence: "A River and a City".to_string() })
         );
     }
@@ -82,7 +82,7 @@ mod tests {
         vec.push("a".to_string());
         vec.push("city".to_string());
         assert_eq!(
-            capitalize(&Some(vec)),
+            cap(&Some(vec)),
             Ok(CapitalizedSentence { sentence: "1 A River and a City".to_string() })
         );
     }
@@ -97,7 +97,7 @@ mod tests {
         vec.push("a".to_string());
         vec.push("city".to_string());
         assert_eq!(
-            capitalize(&Some(vec)),
+            cap(&Some(vec)),
             Ok(CapitalizedSentence { sentence: "# A River and a City".to_string() })
         );
     }
@@ -105,7 +105,7 @@ mod tests {
     #[test]
     fn capitalize_empty_input() {
         assert_eq!(
-            capitalize(&None),
+            cap(&None),
             Err(EMPTY)
         );
     }
